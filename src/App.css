@@ -1,3 +1,125 @@
 .App {
   text-align: center;
+  margin: 20px;
+}
+
+.layout {
+  background-color: var(--default-30);
+  border-radius: 7px;
+}
+
+.createNewCarModal {
+  width: 250px;
+}
+
+.createNewCarModal__carInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.carInfo__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.carInfo_currentModel p {
+  font-weight: 600;
+}
+
+.carInfo__block p {
+  font-size: 1.2rem;
+}
+
+.listOfCarsWrapper {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px double var(--default-50);
+}
+
+.listOfTripsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.listOfCarsWrapper__noCarsTitle,
+.listOfTripsWrapper__noTripsTitle {
+  margin: 1rem 0;
+}
+
+.createNewCarModal__title {
+  text-align: center;
+  color: var(--default-80);
+  font-size: 1.5rem;
+}
+
+.listOfCarsWrapper__title,
+.listOfTripsWrapper__title {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.listOfCarsWrapper__createNewCar {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--default-40);
+}
+
+.listOfCars__carInListWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carInList__deleteIcon {
+  padding: 0.5rem;
+}
+
+.carInList__deleteIcon:hover {
+  background-color: var(--default-40);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.listOfCars,
+.listOfTrips {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.outlinedBtn {
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--default-40);
+  background-color: var(--default-10);
+}
+
+.outlinedBtn:hover {
+  cursor: pointer;
+  background-color: var(--default-30);
+}
+
+.outlinedBtn_bg40:hover {
+  background-color: var(--default-40);
+}
+
+.carInList {
+  padding: 5px 10px;
+  width: fit-content;
+}
+
+.carInList span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.carInList:hover {
+  background-color: var(--default-40);
+  cursor: pointer;
+  border-radius: 5px;
 }

@@ -1,3 +1,3 @@
 export const RootLayout = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className='layout'>{children}</div>;
 };

@@ -2,11 +2,32 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 14px;
 }
 
 a {
   text-decoration: none;
   color: #000000;
+}
+
+:root {
+  --default-10: #fff;
+  --default-20: #f8f8f8;
+  --default-30: #e8e8e8;
+  --default-40: #b1b1b1;
+  --default-50: #979797;
+  --default-60: #7e7e7e;
+  --default-70: #646464;
+  --default-80: #4a4a4a;
+  --default-90: #303030;
+  --default-100: #161616;
+  --primary-40: #eaf7ff;
+  --primary-50: #e7edf3;
+  --primary-100: #9bb1ca;
+  --primary-200: #819dbc;
+  --primary-300: #4c6c8f;
+  --primary-400: #31455c;
+  --error-30: #ff4b4b;
 }
 
 body {
