@@ -1,22 +1,21 @@
 import { useState } from 'react';
-// import { NewCarModal } from './NewCarModal';
+import { NewTripModal } from './NewTripModal';
 
-export const CreateNewTrip = ({ reset }) => {
+export const CreateNewTrip = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className='listOfCarsWrapper__createNewCar'>
+    <div className='listOfTripsWrapper__createNewTrip'>
       <button
         className='outlinedBtn outlinedBtn_bg40'
         onClick={() => setModalOpen(true)}
       >
         Create new trip
       </button>
-      {/* <NewCarModal
-        reset={reset}
+      <NewTripModal
         isModalOpen={isModalOpen}
         closeModal={() => setModalOpen(false)}
-      /> */}
+      />
     </div>
   );
 };

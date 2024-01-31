@@ -6,43 +6,78 @@
 .layout {
   background-color: var(--default-30);
   border-radius: 7px;
+  padding: 5px 10px;
+  width: 335px;
+  margin: 0 auto;
 }
 
-.createNewCarModal {
+.errorMessage {
+  color: var(--error-30);
+  margin-top: 5px;
+}
+
+.createNewCarModal,
+.createNewTripModal,
+.confirmDeleteModal {
   width: 250px;
 }
 
-.createNewCarModal__carInfo {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.carInfo__block {
+.createNewCarModal__carInfo,
+.createNewTripModal__tripInfo {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.createNewCarModal__carInfo {
+  gap: 0.3rem;
+}
+
+.carInfo__block,
+.tripInfo__block {
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  min-width: 6rem;
 }
 
-.carInfo_currentModel p {
-  font-weight: 600;
-}
-
-.carInfo__block p {
+.carInfo__block p,
+.tripInfo__block p {
   font-size: 1.2rem;
+  font-weight: 600;
+  word-break: break-word;
 }
 
-.listOfCarsWrapper {
+.carInfo__block p:first-child {
+  min-width: 9rem;
+  font-weight: 400;
+  word-break: normal;
+}
+
+.tripInfo__block p:first-child {
+  min-width: 7rem;
+  font-weight: 400;
+  word-break: normal;
+}
+
+.listOfCarsWrapper,
+.listOfTripsWrapper,
+.addMileageWrapper {
   display: flex;
   flex-direction: column;
   border-bottom: 5px double var(--default-50);
 }
 
-.listOfTripsWrapper {
+.fuelPricesWrapper {
   display: flex;
   flex-direction: column;
+  padding: 1rem 0.3rem;
+  margin-top: 1rem;
+  border: 1px solid #96d996;
+  border-radius: 10px;
+  background-color: #e9f3e8;
 }
 
 .listOfCarsWrapper__noCarsTitle,
@@ -50,34 +85,46 @@
   margin: 1rem 0;
 }
 
-.createNewCarModal__title {
+.createNewCarModal__title,
+.createNewTripModal__title,
+.confirmDeleteModal__title {
   text-align: center;
   color: var(--default-80);
   font-size: 1.5rem;
 }
 
 .listOfCarsWrapper__title,
-.listOfTripsWrapper__title {
+.listOfTripsWrapper__title,
+.addMileageWrapper__title {
   margin: 1rem 0;
   font-size: 1.5rem;
 }
 
-.listOfCarsWrapper__createNewCar {
+.fuelPrice__title {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.listOfCarsWrapper__createNewCar,
+.listOfTripsWrapper__createNewTrip {
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--default-40);
 }
 
-.listOfCars__carInListWrapper {
+.listOfCars__carInListWrapper,
+.listOfTrips__tripInListWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.carInList__deleteIcon {
+.carInList__deleteIcon,
+.tripInList__deleteIcon {
   padding: 0.5rem;
 }
 
-.carInList__deleteIcon:hover {
+.carInList__deleteIcon:hover,
+.tripInList__deleteIcon:hover {
   background-color: var(--default-40);
   cursor: pointer;
   border-radius: 50%;
@@ -89,11 +136,12 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 .outlinedBtn {
   padding: 0.3rem 1rem;
+  margin-top: 10px;
   border-radius: 0.5rem;
   border: 1px solid var(--default-40);
   background-color: var(--default-10);
@@ -108,18 +156,77 @@
   background-color: var(--default-40);
 }
 
-.carInList {
+.carInList,
+.tripInList {
   padding: 5px 10px;
   width: fit-content;
 }
 
-.carInList span {
+.carInList span,
+.tripInList {
   font-size: 1.2rem;
   font-weight: 600;
+  word-break: break-word;
 }
 
-.carInList:hover {
+.carInList:hover,
+.tripInList:hover {
   background-color: var(--default-40);
   cursor: pointer;
   border-radius: 5px;
+}
+
+.selectCarsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.addMileageWrapper__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.addMileage__containersWrapper,
+.fuelPrice__containersWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.containersWrapper__container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.confirmDeleteModal__btnsWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.confirmDeleteModal__textWrapper {
+  display: flex;
+  flex-direction: column;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.confirmDeleteModal__textWrapper p:last-child {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.textWrapper__ol {
+  list-style-position: inside;
+  margin: 0.5rem 0;
+}
+
+.textWrapper__ol li::marker {
+  font-weight: 600;
 }

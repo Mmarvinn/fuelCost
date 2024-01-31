@@ -5,6 +5,7 @@ import {
   setLocalStorageCars,
 } from '../../services/localStorage';
 import { validateEmptyInputs } from '../../services/validation';
+import { SelectFuelType } from './SelectFuelType';
 
 export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
   const [values, setValues] = useState({
@@ -14,16 +15,26 @@ export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
     year: null,
     engine: null,
     consumption: null,
+    fuelType: null,
   });
   const [validationError, setValidationError] = useState(false);
 
   const handleChange = (props) => (event) => {
-    setValues((prevState) => {
-      if (event.target.value === '') {
-        return { ...prevState, [props]: null };
-      }
-      return { ...prevState, [props]: event.target.value };
-    });
+    if (props === 'fuelType') {
+      setValues((prevState) => {
+        if (event === '') {
+          return { ...prevState, [props]: null };
+        }
+        return { ...prevState, [props]: event };
+      });
+    } else {
+      setValues((prevState) => {
+        if (event.target.value === '') {
+          return { ...prevState, [props]: null };
+        }
+        return { ...prevState, [props]: event.target.value };
+      });
+    }
   };
 
   const handleClose = () => {
@@ -34,13 +45,14 @@ export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
       year: null,
       engine: null,
       consumption: null,
+      fuelType: null,
     });
     closeModal();
+    setValidationError(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
 
     const validation = validateEmptyInputs(values);
     if (validation) {
@@ -64,7 +76,7 @@ export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
       zIndex={1}
       aria-modal='true'
       aria-label='modal create new car'
-      title={<h4 className='createNewCarModal__title'>Car Characteristics</h4>}
+      title={<h4 className='createNewCarModal__title'>Create Car</h4>}
     >
       <form onSubmit={handleSubmit} name='newCarForm'>
         <label>Brand</label>
@@ -148,6 +160,11 @@ export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
           // }}
         />
 
+        <SelectFuelType
+          value={values.fuelType}
+          handleChange={handleChange('fuelType')}
+        />
+
         <input
           className='outlinedBtn'
           aria-roledescription='submit button'
@@ -157,7 +174,9 @@ export const NewCarModal = ({ isModalOpen, closeModal, reset }) => {
         />
       </form>
 
-      {validationError && <p>Please fill all of fields</p>}
+      {validationError && (
+        <p className='errorMessage'>Please fill all of fields</p>
+      )}
     </Modal>
   );
 };

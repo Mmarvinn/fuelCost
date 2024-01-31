@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CarInList } from './CarInList';
 import { getLocalStorageCars } from '../../services/localStorage';
 import { CreateNewCar } from './CreateNewCar';
+import { ReactContext } from '../../services/ReactContextProvider';
 
 export const ListOfCars = () => {
   const [cars, setCars] = useState([]);
-  const [seed, setSeed] = useState(1);
-  const reset = () => {
-    setSeed(Math.random());
-  };
+  const { seed, reset } = useContext(ReactContext);
 
   useEffect(() => {
     const localStorage = getLocalStorageCars();

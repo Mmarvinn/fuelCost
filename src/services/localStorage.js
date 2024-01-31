@@ -1,5 +1,6 @@
 const CARS = 'Cars';
 const TRIPS = 'Trips';
+const FUEL_PRICES = 'FuelPrices';
 
 // cars
 export const getLocalStorageCars = () => {
@@ -29,4 +30,19 @@ export const setLocalStorageTrips = (data) => {
 
 export const deleteLocalStorageTrips = () => {
   localStorage.removeItem(TRIPS);
+};
+
+// fuel prices
+export const getLocalStorageFuelPrices = () => {
+  const data = localStorage.getItem(FUEL_PRICES);
+  return JSON.parse(data);
+};
+
+export const setLocalStorageFuelPrices = (data) => {
+  const json = JSON.stringify(data);
+  localStorage.setItem(FUEL_PRICES, json);
+};
+
+export const deleteLocalStorageFuelPrices = () => {
+  localStorage.removeItem(FUEL_PRICES);
 };
