@@ -84,4 +84,4 @@ This project is private and not licensed for public use.
 
 [Trip Cost](https://fuel-cost-nu.vercel.app/)
 
-![Trip Cost App image](public\travelCost.png 'Trip Cost')
+![Trip Cost App image](https://github.com/Mmarvinn/fuelCost/blob/main/public/travelCost.png 'Trip Cost')
