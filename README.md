@@ -80,8 +80,6 @@ The application uses browser's Local Storage to persist:
 
 This project is private and not licensed for public use.
 
-## Live test version is here
-
-[Trip Cost](https://fuel-cost-nu.vercel.app/)
+## Live test version is here -> [Trip Cost](https://fuel-cost-nu.vercel.app/)
 
 ![Trip Cost App image](https://github.com/Mmarvinn/fuelCost/blob/main/public/travelCost.png 'Trip Cost')
