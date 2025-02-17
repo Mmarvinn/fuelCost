@@ -2,7 +2,7 @@
 
 A React application for tracking and managing travel expenses, car information, and fuel costs.
 
-## Features
+### Features
 
 - Add and manage cars with detailed information:
 
@@ -25,7 +25,7 @@ A React application for tracking and managing travel expenses, car information, 
   - Automatic cost calculation based on current prices
   - Support for LPG, Gas, and Diesel
 
-## Project Structure
+### Project Structure
 
 ```
 src/
@@ -40,14 +40,14 @@ src/
     validation.js   # Input validation
 ```
 
-## Technologies Used
+### Technologies Used
 
 - React 18
 - Ant Design (antd)
 - Local Storage for data persistence
 - React Context for state management
 
-## Getting Started
+### Getting Started
 
 1. Clone the repository
 2. Install dependencies:
@@ -62,13 +62,12 @@ npm install
 npm start
 ```
 
-## Available Scripts
+### Available Scripts
 
 - `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
 - `npm run build` - Builds the app for production
 
-## Data Storage
+### Data Storage
 
 The application uses browser's Local Storage to persist:
 
@@ -77,6 +76,12 @@ The application uses browser's Local Storage to persist:
 - Fuel prices
 - Mileage data
 
-## License
+### License
 
 This project is private and not licensed for public use.
+
+## Live test version is here
+
+[Trip Cost](https://fuel-cost-nu.vercel.app/)
+
+![Trip Cost App image](public\travelCost.png 'Trip Cost')
